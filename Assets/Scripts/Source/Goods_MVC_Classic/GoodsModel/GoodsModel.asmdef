@@ -1,7 +1,9 @@
 {
     "name": "GoodsModel",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:fdda90916570d3e44b4a14bc7ecc4311"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

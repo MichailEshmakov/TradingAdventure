@@ -1,6 +1,5 @@
 using Goods.Model;
 using NUnit.Framework;
-using Tests.Mock;
 
 namespace Tests.UnitTests.Goods
 {
@@ -11,7 +10,7 @@ namespace Tests.UnitTests.Goods
         {
             // Arrange.
             float basicPrice = 7f;
-            IFinalPrice finalPrice = new FinalPrice(basicPrice);
+            IFinalPrice finalPrice = Setup.FinalPrice(basicPrice);
 
             // Act.
             float finalPriceValue = finalPrice.ComputeValue();
@@ -27,11 +26,7 @@ namespace Tests.UnitTests.Goods
             float basicPrice = 10f;
             float firstCoefficient = 2f;
             float secondCoefficient = 3f;
-            IFinalPrice finalPrice = new FinalPrice(basicPrice);
-            IPriceCoefficient firstCoefficientObject = new PriceCoefficientMock(firstCoefficient);
-            IPriceCoefficient secondCoefficientObject = new PriceCoefficientMock(secondCoefficient);
-            finalPrice.TryAddCoefficient(firstCoefficientObject);
-            finalPrice.TryAddCoefficient(secondCoefficientObject);
+            IFinalPrice finalPrice = Setup.FinalPrice(basicPrice, firstCoefficient, secondCoefficient);
 
             // Act.
             float finalPriceValue = finalPrice.ComputeValue();
