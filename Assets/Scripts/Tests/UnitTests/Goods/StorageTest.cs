@@ -1,4 +1,5 @@
 using Goods.Model;
+using Goods.Model.Readonly.Resources;
 using Goods.Model.Resources;
 using NUnit.Framework;
 

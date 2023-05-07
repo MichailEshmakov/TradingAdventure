@@ -1,15 +1,11 @@
-﻿using Goods.Model.Resources;
-using System.Collections.Generic;
+﻿using Goods.Model.Readonly;
+using Goods.Model.Readonly.Resources;
 
 namespace Goods.Model
 {
-    public interface IStorage
+    public interface IStorage : IReadonlyStorage
     {
-        IEnumerable<IResource> Resources { get; }
-
-        public int GetValue(Currency currency);
         public bool TryAdd(Currency currency, int addableAmount);
         public bool TrySpend(Currency currency, int spendableAmount);
-        public bool CanSpend(Currency currency, int spendableAmount);
     }
 }

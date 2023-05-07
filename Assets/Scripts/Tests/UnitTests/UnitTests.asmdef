@@ -5,7 +5,8 @@
         "Zenject",
         "GoodsModel",
         "Mock",
-        "Numerics"
+        "Numerics",
+        "ReadonlyGoodsModel"
     ],
     "includePlatforms": [
         "Editor"

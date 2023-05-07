@@ -1,3 +1,4 @@
+using Goods.Model.Readonly.Resources;
 using Goods.Model.Resources;
 using System;
 

@@ -1,3 +1,4 @@
+using Goods.Model.Readonly.Resources;
 using Goods.Model.Resources;
 using System;
 using System.Collections.Generic;
@@ -9,8 +10,7 @@ namespace Goods.Model
     {
         private readonly IEnumerable<IResource> _resources;
 
-        public IEnumerable<IResource> Resources => _resources;
-
+        public IEnumerable<IReadonlyResource> Resources => _resources;
 
         public Storage(IEnumerable<IResource> resources)
         {
@@ -26,7 +26,7 @@ namespace Goods.Model
         public int GetValue(Currency currency)
         {
             if (TryFindResource(currency, out IResource resource))
-                return resource.Value;
+                return (resource as IReadonlyResource).Value;
 
             return 0;
         }
@@ -58,7 +58,7 @@ namespace Goods.Model
 
         private bool TryFindResource(Currency currency, out IResource foundResource)
         {
-            foundResource = Resources.FirstOrDefault(resource => resource.Currency == currency);
+            foundResource = _resources.FirstOrDefault(resource => resource.Currency == currency);
             return foundResource != null;
         }
     }

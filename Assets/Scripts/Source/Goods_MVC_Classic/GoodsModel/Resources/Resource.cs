@@ -1,4 +1,5 @@
 using System;
+using Goods.Model.Readonly.Resources;
 using Numerics;
 
 namespace Goods.Model.Resources

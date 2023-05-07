@@ -1,10 +1,9 @@
-using System;
+using Goods.Model.Readonly.Resources;
 using Numerics;
 
 namespace Goods.Model.Resources
 {
-    public interface IResource : INaturalNumber, IChangingPublisher<int>
+    public interface IResource : INaturalNumber, IReadonlyResource
     {
-        public Currency Currency { get; }
     }
 }
