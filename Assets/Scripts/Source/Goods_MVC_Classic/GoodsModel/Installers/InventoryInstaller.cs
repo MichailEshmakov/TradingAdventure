@@ -14,7 +14,7 @@ namespace Goods.Model.Installers
         public override void InstallBindings()
         {
             List<IResource> resources = new List<IResource>();
-            foreach (CurrencyValuePair currencyValue in _config.StartPlayersResources)
+            foreach (CurrencyIntPair currencyValue in _config.StartPlayersResources)
             {
                 resources.Add(new Resource(currencyValue.Value, currencyValue.Currency));
             }

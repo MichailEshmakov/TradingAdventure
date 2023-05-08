@@ -9,5 +9,7 @@ namespace Goods.Model.Readonly
 
         public int GetValue(Currency currency);
         public bool CanSpend(Currency currency, int spendableAmount);
+        public bool TryFindResource(Currency currency, out IReadonlyResource foundResource);
+        public bool TryGetFirstResource(out IReadonlyResource resource);
     }
 }

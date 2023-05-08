@@ -56,6 +56,19 @@ namespace Goods.Model
             return false;
         }
 
+        public bool TryFindResource(Currency currency, out IReadonlyResource foundResource)
+        {
+            bool isFound = TryFindResource(currency, out IResource resource);
+            foundResource = resource;
+            return isFound;
+        }
+
+        public bool TryGetFirstResource(out IReadonlyResource resource)
+        {
+            resource = _resources.FirstOrDefault();
+            return resource != null;
+        }
+
         private bool TryFindResource(Currency currency, out IResource foundResource)
         {
             foundResource = _resources.FirstOrDefault(resource => resource.Currency == currency);

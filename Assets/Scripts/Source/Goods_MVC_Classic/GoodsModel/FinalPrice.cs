@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace Goods.Model
@@ -7,9 +8,21 @@ namespace Goods.Model
         private readonly float _basicValue;
         private readonly HashSet<IPriceCoefficient> _coefficients = new HashSet<IPriceCoefficient>();
 
+        public IEnumerable<IPriceCoefficient> Coefficients => _coefficients;
+
         public FinalPrice(float basicValue)
         {
             _basicValue = basicValue;
+        }
+
+        public FinalPrice(float basicValue, IEnumerable<IPriceCoefficient> coefficients)
+        {
+            _basicValue = basicValue;
+            foreach (IPriceCoefficient coefficient in coefficients)
+            {
+                if (TryAddCoefficient(coefficient) == false)
+                    throw new ArgumentException(nameof(coefficient));
+            }
         }
 
         public bool TryAddCoefficient(IPriceCoefficient coefficient)
