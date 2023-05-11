@@ -56,6 +56,11 @@ namespace Goods.Model
             return false;
         }
 
+        public bool CanStore(Currency currency)
+        {
+            return TryFindResource(currency, out IResource foundResource);
+        }
+
         public bool TryFindResource(Currency currency, out IReadonlyResource foundResource)
         {
             bool isFound = TryFindResource(currency, out IResource resource);

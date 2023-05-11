@@ -6,7 +6,8 @@
         "GoodsModel",
         "Mock",
         "Numerics",
-        "ReadonlyGoodsModel"
+        "ReadonlyGoodsModel",
+        "DealsModel"
     ],
     "includePlatforms": [
         "Editor"

@@ -1,4 +1,5 @@
 using Goods.Model;
+using Goods.Model.Readonly.Resources;
 using Goods.Model.Resources;
 using Tests.Mock;
 
@@ -22,6 +23,11 @@ namespace Tests.UnitTests.Goods
         public static Storage Storage(params IResource[] resources)
         {
             return new Storage(resources);
+        }
+
+        public static Resource Resource(int value, Currency currency)
+        {
+            return new Resource(value, currency);
         }
     }
 }

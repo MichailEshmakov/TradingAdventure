@@ -1,0 +1,17 @@
+{
+    "name": "DealsPresenter",
+    "rootNamespace": "",
+    "references": [
+        "GUID:a68179afdcb6d0f4bba7202ec90b3499",
+        "GUID:953418e46c84eb449a7e30c79d9882d9"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

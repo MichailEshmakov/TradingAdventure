@@ -28,7 +28,7 @@ namespace Tests.UnitTests.Goods
             // Arrange.
             int resourceAmount = 4;
             Currency gettingType = 0;
-            IResource resource = new Resource(resourceAmount, gettingType);
+            IResource resource = Setup.Resource(resourceAmount, gettingType);
             Storage storage = Setup.Storage(resource);
 
             // Act.
@@ -44,7 +44,7 @@ namespace Tests.UnitTests.Goods
             // Arrange.
             int resourceAmount = 4;
             Currency resourceType = 0;
-            IResource resource = new Resource(resourceAmount, resourceType);
+            IResource resource = Setup.Resource(resourceAmount, resourceType);
             Storage storage = Setup.Storage(resource);
             int addingValue = 5;
 
@@ -62,7 +62,7 @@ namespace Tests.UnitTests.Goods
             // Arrange.
             int resourceAmount = 4;
             Currency resourceType = 0;
-            IResource resource = new Resource(resourceAmount, resourceType);
+            IResource resource = Setup.Resource(resourceAmount, resourceType);
             Storage storage = Setup.Storage(resource);
             int addingValue = 5;
 
@@ -79,7 +79,7 @@ namespace Tests.UnitTests.Goods
             // Arrange.
             int resourceAmount = 4;
             Currency existingResourceType = 0;
-            IResource resource = new Resource(resourceAmount, existingResourceType);
+            IResource resource = Setup.Resource(resourceAmount, existingResourceType);
             Storage storage = Setup.Storage(resource);
             int addingValue = 5;
             Currency addingResourceType = (Currency)1;
@@ -97,7 +97,7 @@ namespace Tests.UnitTests.Goods
             // Arrange.
             int resourceAmount = 4;
             Currency resourceType = 0;
-            IResource resource = new Resource(resourceAmount, resourceType);
+            IResource resource = Setup.Resource(resourceAmount, resourceType);
             Storage storage = Setup.Storage(resource);
             int substructingValue = 5;;
 
@@ -114,7 +114,7 @@ namespace Tests.UnitTests.Goods
             // Arrange.
             int resourceAmount = 4;
             Currency resourceType = 0;
-            IResource resource = new Resource(resourceAmount, resourceType);
+            IResource resource = Setup.Resource(resourceAmount, resourceType);
             Storage storage = Setup.Storage(resource);
             int substructingValue = 5; ;
 
@@ -132,7 +132,7 @@ namespace Tests.UnitTests.Goods
             // Arrange.
             int resourceAmount = 5;
             Currency resourceType = 0;
-            IResource resource = new Resource(resourceAmount, resourceType);
+            IResource resource = Setup.Resource(resourceAmount, resourceType);
             Storage storage = Setup.Storage(resource);
             int substructingValue = 4; ;
 
@@ -149,7 +149,7 @@ namespace Tests.UnitTests.Goods
             // Arrange.
             int resourceAmount = 5;
             Currency resourceType = 0;
-            IResource resource = new Resource(resourceAmount, resourceType);
+            IResource resource = Setup.Resource(resourceAmount, resourceType);
             Storage storage = Setup.Storage(resource);
             int substructingValue = 4; ;
 
@@ -167,7 +167,7 @@ namespace Tests.UnitTests.Goods
             // Arrange.
             int resourceAmount = 5;
             Currency existingResourceType = 0;
-            IResource resource = new Resource(resourceAmount, existingResourceType);
+            IResource resource = Setup.Resource(resourceAmount, existingResourceType);
             Storage storage = Setup.Storage(resource);
             int substructingValue = 4; ;
             Currency spendingResourceType = (Currency)1;
