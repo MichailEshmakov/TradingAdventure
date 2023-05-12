@@ -12,41 +12,22 @@ namespace Goods.View
         [SerializeField] private ResourceIconsConfig _config;
 
         private IReadonlyResource _resource;
-        private bool _isInited;
 
         private void OnEnable()
         {
-            if (_resource != null)
-            {
-                _resource.DecreasedBy -= OnResourceDecreasedBy;
-                _resource.IncreasedBy -= OnResourceIncreasedBy;
-                _resource.DecreasedBy += OnResourceDecreasedBy;
-                _resource.IncreasedBy += OnResourceIncreasedBy;
-            }
+            TryResubscribeToResource();
         }
 
         private void OnDisable()
         {
-            if (_resource != null)
-            {
-                _resource.DecreasedBy -= OnResourceDecreasedBy;
-                _resource.IncreasedBy -= OnResourceIncreasedBy;
-            }
+            TryUnsubscribeFromResource();
         }
 
         public void Init(IReadonlyResource resource)
         {
-            if (_isInited)
-            {
-                Debug.LogError($"{nameof(ResourceView)} in {name} is already inited");
-                return;
-            }
-
-            _isInited = true;
             _resource = resource;
             _text.text = _resource.Value.ToString();
-            _resource.DecreasedBy += OnResourceDecreasedBy;
-            _resource.IncreasedBy += OnResourceIncreasedBy;
+            TryResubscribeToResource();
 
             if (_config.TryGetSprite(_resource.Currency, out Sprite sprite) == false)
             {
@@ -63,6 +44,29 @@ namespace Goods.View
         private void OnResourceDecreasedBy(int delta)
         {
             _text.text = _resource.Value.ToString();
+        }
+
+        private bool TryResubscribeToResource()
+        {
+            if (_resource == null)
+                return false;
+
+            if (TryUnsubscribeFromResource() == false)
+                return false;
+
+            _resource.DecreasedBy += OnResourceDecreasedBy;
+            _resource.IncreasedBy += OnResourceIncreasedBy;
+            return true;
+        }
+
+        private bool TryUnsubscribeFromResource()
+        {
+            if (_resource == null)
+                return false;
+
+            _resource.DecreasedBy -= OnResourceDecreasedBy;
+            _resource.IncreasedBy -= OnResourceIncreasedBy;
+            return true;
         }
     }
 }

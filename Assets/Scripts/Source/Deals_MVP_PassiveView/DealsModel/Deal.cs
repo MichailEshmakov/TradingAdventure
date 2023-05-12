@@ -4,7 +4,7 @@ using System;
 
 namespace Deals.Model
 {
-    public class Deal
+    public class Deal : IDeal
     {
         private readonly IReadonlyResource _removable;
         private readonly IReadonlyResource _addable;
@@ -12,6 +12,9 @@ namespace Deals.Model
 
         public event Action Rejected;
         public event Action Accepted;
+
+        public IReadonlyResource Removable => _removable;
+        public IReadonlyResource Addable => _addable;
 
         public Deal(IReadonlyResource removable, IReadonlyResource addable, IStorage inventory)
         {
