@@ -34,6 +34,8 @@ namespace Goods.View
                 Debug.LogError($"cannot find {resource.Currency} in {nameof(_config)}");
                 return;
             }
+
+            _icon.sprite = sprite;
         }
 
         private void OnResourceIncreasedBy(int delta)

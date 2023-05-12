@@ -20,13 +20,13 @@ namespace Deals.View
         private void OnEnable()
         {
             _acceptButton.onClick.AddListener(OnAcceptButtonClicked);
-            _acceptButton.onClick.AddListener(OnRejectButtonClicked);
+            _rejectButton.onClick.AddListener(OnRejectButtonClicked);
         }
 
         private void OnDisable()
         {
             _acceptButton.onClick.RemoveListener(OnAcceptButtonClicked);
-            _acceptButton.onClick.RemoveListener(OnRejectButtonClicked);
+            _rejectButton.onClick.RemoveListener(OnRejectButtonClicked);
         }
 
         public void Init(IReadonlyResource addableResource, IReadonlyResource removableResource)

@@ -1,6 +1,7 @@
 using Deals.Model;
 using Deals.View;
 using System;
+using UnityEngine;
 using Zenject;
 
 namespace Deals.Presenter
@@ -38,11 +39,10 @@ namespace Deals.Presenter
 
         private void OnRejectButtonClicked()
         {
-            if (_deal == null)
-                return;
-
-            _deal.Reject();
             _view.Hide();
+
+            if (_deal != null)
+                _deal.Reject();
         }
 
         private void OnAcceptButtonClicked()
