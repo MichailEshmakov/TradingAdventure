@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Clients.Model.Configs
 {
     [Serializable]
-    public class ResourceCoefficients
+    public class ClientPreference : IResourceCoefficients
     {
         [SerializeField] private Currency _currency;
         [SerializeField] [MinMaxSlider(0.25f, 3f)] private Vector2 _demandCoefficients;
@@ -21,5 +21,18 @@ namespace Clients.Model.Configs
         public float MaxSupplyCoefficient => _supplyCoefficients.y;
         public float DemandChance => _demandChance;
         public float SupplyChance => _supplyChance;
+
+        public ClientPreference(Currency currency, 
+            Vector2 demandCoefficients, 
+            Vector2 supplyCoefficients, 
+            float demandChance, 
+            float supplyChance)
+        {
+            _currency = currency;
+            _demandCoefficients = demandCoefficients;
+            _supplyCoefficients = supplyCoefficients;
+            _demandChance = demandChance;
+            _supplyChance = supplyChance;
+        }
     }
 }

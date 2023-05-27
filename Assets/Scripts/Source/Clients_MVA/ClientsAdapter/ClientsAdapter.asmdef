@@ -1,3 +1,20 @@
 {
-	"name": "ClientsAdapter"
+    "name": "ClientsAdapter",
+    "rootNamespace": "",
+    "references": [
+        "GUID:a68179afdcb6d0f4bba7202ec90b3499",
+        "GUID:535811665b21cef47aa29657588c5f2e",
+        "GUID:27d5d954b183b3b499899fb735a38407",
+        "GUID:038ec4e5b0fcb8f47a818bb858c75fc7",
+        "GUID:fdda90916570d3e44b4a14bc7ecc4311"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

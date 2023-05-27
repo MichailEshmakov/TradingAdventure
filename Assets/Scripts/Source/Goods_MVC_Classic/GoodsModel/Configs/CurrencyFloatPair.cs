@@ -12,5 +12,11 @@ namespace Goods.Model.Configs
 
         public Currency Currency => _currency;
         public float Value => _value;
+
+        public CurrencyFloatPair(Currency currency, float value)
+        {
+            _currency = currency;
+            _value = value;
+        }
     }
 }
