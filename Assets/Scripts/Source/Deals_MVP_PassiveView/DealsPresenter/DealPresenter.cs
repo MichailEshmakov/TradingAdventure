@@ -1,7 +1,6 @@
 using Deals.Model;
 using Deals.View;
 using System;
-using UnityEngine;
 using Zenject;
 
 namespace Deals.Presenter
@@ -50,8 +49,12 @@ namespace Deals.Presenter
             if (_deal == null)
                 return;
 
+            IDeal temp = _deal;
             if (_deal.TryAccept())
-                _view.Hide();
+            {
+                if (temp == _deal)
+                    _view.Hide();
+            }
         }
     }
 }

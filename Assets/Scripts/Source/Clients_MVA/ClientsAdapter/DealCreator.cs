@@ -7,21 +7,28 @@ using Goods.Model.Resources;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Zenject;
 
 namespace Clients.Adapter
 {
-    public class DealCreator
+    public class DealCreator : IDealCreator
     {
-        private readonly IBasicPricesConfig _config;
-        private readonly IStorage _playerInventory;
+        private IBasicPricesConfig _config;
+        private IStorage _playerInventory;
 
         public DealCreator(IBasicPricesConfig config, IStorage playerInventory)
+        {
+            Construct(config, playerInventory);
+        }
+
+        [Inject]
+        private void Construct(IBasicPricesConfig config, IStorage playerInventory)
         {
             _config = config;
             _playerInventory = playerInventory;
         }
 
-        public Deal CreateDeal(Client client)
+        public Deal CreateDeal(IClient client)
         {
             List<ClientPreference> cosideringPreferences = client.ResourceCoefficients.ToList();
             IResource demand = CreateDemand(cosideringPreferences, client.DealCost, out ClientPreference demandPreferences);
@@ -40,10 +47,11 @@ namespace Clients.Adapter
             return new Resource(resourcesAmount, currency);
         }
 
-        private IResource CreateDemand(List<ClientPreference> cosideringPreferences, 
+        private IResource CreateDemand(IEnumerable<ClientPreference> cosideringPreferences, 
             float dealCost,
             out ClientPreference demandPreferences)
         {
+            cosideringPreferences = FitDemandProbabilities(cosideringPreferences);
             demandPreferences = null;
             float demandRandom = Random.value;
             float demandChanceSum = 0f;
@@ -63,9 +71,10 @@ namespace Clients.Adapter
             throw new System.ArgumentOutOfRangeException(nameof(ClientPreference.DemandChance));
         }
 
-        private IResource CreateSupply(List<ClientPreference> cosideringPreferences,
+        private IResource CreateSupply(IEnumerable<ClientPreference> cosideringPreferences,
             float dealCost)
         {
+            cosideringPreferences = FitSupplyProbabilities(cosideringPreferences);
             float supplyRandom = Random.value;
             float supplyChanceSum = 0f;
             foreach (ClientPreference preference in cosideringPreferences)
@@ -81,6 +90,34 @@ namespace Clients.Adapter
             }
 
             throw new System.ArgumentOutOfRangeException(nameof(ClientPreference.SupplyChance));
+        }
+
+        private IEnumerable<ClientPreference> FitDemandProbabilities(IEnumerable<ClientPreference> clientPreferences)
+        {
+            float chancesSum = clientPreferences.Select(preference => preference.DemandChance).Sum();
+            if (chancesSum == 1f)
+                return clientPreferences;
+
+            return clientPreferences.Select(preference => new ClientPreference(
+                preference.Currency,
+                new Vector2(preference.MinDemandCoefficient, preference.MaxSupplyCoefficient),
+                new Vector2(preference.MinSupplyCoefficient, preference.MaxSupplyCoefficient),
+                preference.DemandChance / chancesSum,
+                preference.SupplyChance));
+        }
+
+        private IEnumerable<ClientPreference> FitSupplyProbabilities(IEnumerable<ClientPreference> clientPreferences)
+        {
+            float chancesSum = clientPreferences.Select(preference => preference.SupplyChance).Sum();
+            if (chancesSum == 1f)
+                return clientPreferences;
+
+            return clientPreferences.Select(preference => new ClientPreference(
+                preference.Currency,
+                new Vector2(preference.MinDemandCoefficient, preference.MaxSupplyCoefficient),
+                new Vector2(preference.MinSupplyCoefficient, preference.MaxSupplyCoefficient),
+                preference.DemandChance,
+                preference.SupplyChance / chancesSum));
         }
     }
 }

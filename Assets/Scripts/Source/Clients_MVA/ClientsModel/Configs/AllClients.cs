@@ -5,13 +5,15 @@ using UnityEngine;
 namespace Clients.Model.Configs
 {
     [CreateAssetMenu(fileName = nameof(AllClients), menuName = "Configs/Model/" + nameof(AllClients), order = 0)]
-    public class AllClients : ScriptableObject
+    public class AllClients : ScriptableObject, IAllClients
     {
         [SerializeField] private List<Client> _clients;
 
-        public bool TryGetRandom(out Client client)
+        public bool TryGetRandom(out IClient client)
         {
-            return _clients.TryGetRandom(out client);
+            bool isFound = _clients.TryGetRandom(out Client randomClient);
+            client = randomClient;
+            return isFound;
         }
     }
 }

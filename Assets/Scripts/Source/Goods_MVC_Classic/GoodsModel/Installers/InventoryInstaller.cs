@@ -10,6 +10,7 @@ namespace Goods.Model.Installers
     public class InventoryInstaller : MonoInstaller
     {
         [SerializeField] private InventoryConfig _config;
+        [SerializeField] private BasicPricesConfig _pricesConfig;
 
         public override void InstallBindings()
         {
@@ -22,6 +23,11 @@ namespace Goods.Model.Installers
             Storage storage = new Storage(resources);
             Container.Bind<IStorage>().FromInstance(storage).AsSingle();
             Container.Bind<IReadonlyStorage>().FromInstance(storage).AsSingle();
+
+            if (_pricesConfig != null)
+                Container.Bind<IBasicPricesConfig>().FromInstance(_pricesConfig).AsSingle();
+            else
+                Debug.LogWarning($"There is no {nameof(_pricesConfig)}");
         }
     }
 }
