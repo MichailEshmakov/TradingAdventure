@@ -44,6 +44,10 @@ namespace Clients.Adapter
 
             float demandCoefficient = Random.Range(minCoefficient, maxCoefficient);
             int resourcesAmount = Mathf.FloorToInt(dealCost / priceOfOne * demandCoefficient);
+
+            if (resourcesAmount <= 0)
+                resourcesAmount = 1;
+
             return new Resource(resourcesAmount, currency);
         }
 

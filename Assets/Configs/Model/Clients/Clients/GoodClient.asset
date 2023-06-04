@@ -33,3 +33,4 @@ MonoBehaviour:
     _supplyCoefficients: {x: 0.5, y: 1}
     _demandChance: 0.25
     _supplyChance: 0.25
+  _dealCost: 21
