@@ -490,7 +490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2707025483679155169, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2707025483679155169, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
       propertyPath: m_AnchorMax.x
@@ -578,12 +578,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6319843284752632505, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
       propertyPath: m_Name
-      value: Panel_DaySetting (2)
+      value: Panel_AdvertisementDaySetting
       objectReference: {fileID: 0}
     - target: {fileID: 7262095084167305509, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: a8d8f862e1a85844aaedf094dc3eae9a, type: 3}
+    - target: {fileID: 7372308772122821003, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
+      propertyPath: m_Name
+      value: Slider_Advertisement
+      objectReference: {fileID: 0}
     - target: {fileID: 8864507022249285599, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -595,6 +599,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2707025483679155169, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
   m_PrefabInstance: {fileID: 516274232}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &516274234 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1623718034986286448, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
+  m_PrefabInstance: {fileID: 516274232}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -780,7 +795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2707025483679155169, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2707025483679155169, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
       propertyPath: m_AnchorMax.x
@@ -880,12 +895,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6319843284752632505, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
       propertyPath: m_Name
-      value: Panel_DaySetting (1)
+      value: Panel_TownScaleDaySetting
       objectReference: {fileID: 0}
     - target: {fileID: 7262095084167305509, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: be182f4e16c4f8c468a3c1190b5f3161, type: 3}
+    - target: {fileID: 7372308772122821003, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
+      propertyPath: m_Name
+      value: Slider_TownScale
+      objectReference: {fileID: 0}
     - target: {fileID: 8864507022249285599, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -897,6 +916,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2707025483679155169, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
   m_PrefabInstance: {fileID: 659919122}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &659919124 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1623718034986286448, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
+  m_PrefabInstance: {fileID: 659919122}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &667056003
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,7 +1010,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 667056006}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2635823882036759344}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &667056006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1065,6 +1107,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _allClientsViewConfigs: {fileID: 11400000, guid: 1d35c7ddf7b3f934aaff981b7ed9366d, type: 2}
   _clientView: {fileID: 2112660150}
+--- !u!1 &1040675691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1040675692}
+  - component: {fileID: 1040675693}
+  m_Layer: 0
+  m_Name: DaySettingsInstaller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1040675692
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040675691}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1591391553}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1040675693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040675691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27bf3cdba9620544a98e4afe9d935e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _config: {fileID: 11400000, guid: 02c9f5e4859137c4d9d64e2d348da797, type: 2}
+  _startDaySettings: {fileID: 11400000, guid: 4e32c5d7395f23741938b149ad0b681a, type: 2}
 --- !u!1 &1078239114
 GameObject:
   m_ObjectHideFlags: 0
@@ -1142,9 +1230,9 @@ RectTransform:
   m_Children:
   - {fileID: 1579916068}
   - {fileID: 667056004}
+  - {fileID: 516274233}
   - {fileID: 2428163551502127201}
   - {fileID: 659919123}
-  - {fileID: 516274233}
   m_Father: {fileID: 2635823882036759345}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1945,6 +2033,7 @@ MonoBehaviour:
   - {fileID: 1893962997}
   - {fileID: 235518765}
   - {fileID: 831064202}
+  - {fileID: 1040675693}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -1980,6 +2069,7 @@ Transform:
   - {fileID: 1893962996}
   - {fileID: 235518764}
   - {fileID: 831064201}
+  - {fileID: 1040675692}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2446,7 +2536,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2707025483679155169, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2707025483679155169, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2526,7 +2616,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6319843284752632505, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
       propertyPath: m_Name
-      value: Panel_DaySetting
+      value: Panel_GoodsAmountDaySetting
+      objectReference: {fileID: 0}
+    - target: {fileID: 7372308772122821003, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
+      propertyPath: m_Name
+      value: Slider_GoodsAmount
       objectReference: {fileID: 0}
     - target: {fileID: 8864507022249285599, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2539,6 +2633,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2707025483679155169, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
   m_PrefabInstance: {fileID: 2428163551502127200}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2428163551502127202 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1623718034986286448, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
+  m_PrefabInstance: {fileID: 2428163551502127200}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2635823882036759344
 GameObject:
   m_ObjectHideFlags: 0
@@ -2548,6 +2653,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2635823882036759345}
+  - component: {fileID: 2635823882036759346}
   m_Layer: 5
   m_Name: DayView
   m_TagString: Untagged
@@ -2576,6 +2682,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2635823882036759346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2635823882036759344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80f124501235fa640800a9a143716885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _advertisement: {fileID: 516274234}
+  _goodsAmount: {fileID: 2428163551502127202}
+  _townScale: {fileID: 659919124}
 --- !u!1001 &8684930072006934455
 PrefabInstance:
   m_ObjectHideFlags: 0

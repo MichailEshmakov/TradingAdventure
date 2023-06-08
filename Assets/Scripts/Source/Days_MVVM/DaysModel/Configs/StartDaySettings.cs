@@ -12,6 +12,8 @@ namespace Days.Model.Configs
 
         private IDaySettingsBalancer _balancer;
 
+        public IDaySettingsValues Values => _values;
+
         private void OnValidate()
         {
             if (_isAutomaticValidate)

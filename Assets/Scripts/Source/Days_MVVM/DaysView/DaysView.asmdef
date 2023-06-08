@@ -1,3 +1,16 @@
 {
-	"name": "DaysView"
+    "name": "DaysView",
+    "rootNamespace": "",
+    "references": [
+        "GUID:20561a7c3144ad64c989a166d7acb5bd"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
