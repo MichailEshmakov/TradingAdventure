@@ -9,7 +9,8 @@
         "ReadonlyGoodsModel",
         "DealsModel",
         "ClientsModel",
-        "ClientsAdapter"
+        "ClientsAdapter",
+        "DaysModel"
     ],
     "includePlatforms": [
         "Editor"

@@ -572,6 +572,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 83a485b77826cf64b952c1071719891a, type: 3}
+    - target: {fileID: 5840368476277889181, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.7407227
+      objectReference: {fileID: 0}
     - target: {fileID: 6319843284752632505, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
       propertyPath: m_Name
       value: Panel_DaySetting (2)
@@ -836,7 +840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2707025483679155169, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000061035156
+      value: 0.00012207031
       objectReference: {fileID: 0}
     - target: {fileID: 2707025483679155169, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2515,6 +2519,10 @@ PrefabInstance:
     - target: {fileID: 2707025483679155169, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840368476277889181, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.7407227
       objectReference: {fileID: 0}
     - target: {fileID: 6319843284752632505, guid: fd4f2ca2c782f954b8edf2e6a9c5f6db, type: 3}
       propertyPath: m_Name

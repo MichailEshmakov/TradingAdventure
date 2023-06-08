@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31f4b7c6c24b4fa4fb530ffc0fd81479, type: 3}
+  m_Name: StartDaySettings
+  m_EditorClassIdentifier: 
+  _isAutomaticValidate: 1
+  _config: {fileID: 11400000, guid: 02c9f5e4859137c4d9d64e2d348da797, type: 2}
+  _values:
+    _clientsAmount: 50
+    _dealsCostCoefficient: 2.200002
+    _clientsTypesAmount: 4

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4ba666fcc6e18c4f9d9177d2d9e65a5, type: 3}
+  m_Name: DaySettingsConfig
+  m_EditorClassIdentifier: 
+  _maxClientsAmount: 50
+  _minClientsAmount: 10
+  _maxDealsCostCoefficient: 5
+  _minDealsCostCoefficient: 1
+  _maxClientsTypesAmount: 7
+  _minClientsTypesAmount: 3
+  _allSettingsCost: 100
+  _oneClientCost: 1
+  _dealCostCoefficientCost: 10
+  _clientTypeCost: 7
