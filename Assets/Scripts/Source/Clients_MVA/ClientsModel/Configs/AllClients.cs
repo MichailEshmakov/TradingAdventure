@@ -1,5 +1,6 @@
 using Extensions;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Clients.Model.Configs
@@ -8,6 +9,11 @@ namespace Clients.Model.Configs
     public class AllClients : ScriptableObject, IAllClients
     {
         [SerializeField] private List<Client> _clients;
+
+        public IEnumerable<IClient> Take(int amount)
+        {
+            return _clients.Take(amount);
+        }
 
         public bool TryGetRandom(out IClient client)
         {

@@ -3,13 +3,11 @@ using System.ComponentModel;
 
 namespace Days.Model
 {
-    public interface IDaySettings : INotifyPropertyChanged
+    public interface IDaySettings : IReadonlyDaySettings
     {
-        public int ClientsAmount { get; set; }
-
-        public float DealsCostCoefficient { get; set; }
-
-        public int ClientsTypesAmount { get; set; }
+        public new int ClientsAmount { get; set; }
+        public new float DealsCostCoefficient { get; set; }
+        public new int ClientsTypesAmount { get; set; }
         public IDaySettingsConfig Config { get; }
     }
 }

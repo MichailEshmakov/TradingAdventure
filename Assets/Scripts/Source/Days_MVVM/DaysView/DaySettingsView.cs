@@ -68,17 +68,19 @@ namespace Days.View
 
         private void OnAdvertismentValueChanged(float newValue)
         {
-            _viewModel.ClientsAmountPart = 1 - newValue;
+            Debug.Log(newValue);
+            Debug.Log(_advertisement.value);
+            _viewModel.ClientsAmountPart = newValue;
         }
 
         private void OnGoodsAmountValueChanged(float newValue)
         {
-            _viewModel.DealsCostCoefficientPart = 1 - newValue;
+            _viewModel.DealsCostCoefficientPart = newValue;
         }
 
         private void OnTownScaleValueChanged(float newValue)
         {
-            _viewModel.ClientsTypesAmountPart = 1 - newValue;
+            _viewModel.ClientsTypesAmountPart = newValue;
         }
     }
 }

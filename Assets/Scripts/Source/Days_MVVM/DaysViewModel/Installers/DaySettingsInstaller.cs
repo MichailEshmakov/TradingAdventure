@@ -17,6 +17,7 @@ namespace Days.ViewModel.Installers
             DaySettings model = new DaySettings(_config, _startDaySettings.Values);
             _viewModel = new DaySettingsViewModel(_config, model);
             Container.Bind<IDaySettingsViewModel>().FromInstance(_viewModel);
+            Container.Bind<IReadonlyDaySettings>().FromInstance(model);
         }
 
         private void OnDestroy()

@@ -8,7 +8,7 @@ namespace Clients.Adapter
 {
     public class TradingPipeline : IDisposable, IDealPublisher, IClientChangingPubliser
     {
-        private IAllClients _allClients;
+        private IClientsSequence _clientsSequence;
         private IDealCreator _dealCreator;
         private IDeal _deal;
         private IClient _client;
@@ -19,11 +19,12 @@ namespace Clients.Adapter
         public event Action DealAccepted;
 
         [Inject]
-        private void Construct(IAllClients allClients, IDealCreator dealCreator)
+        private void Construct(IDealCreator dealCreator, IClientsSequence clientsSequence)
         {
-            _allClients = allClients;
+            _clientsSequence = clientsSequence;
             _dealCreator = dealCreator;
-            UpdateClient();
+
+            _clientsSequence.ClientsGotReady += OnClientsGotReady;
         }
 
         public bool TryGetClientName(out string clientName)
@@ -39,6 +40,7 @@ namespace Clients.Adapter
         public void Dispose()
         {
             TryUnsubscribeFromDeal();
+            _clientsSequence.ClientsGotReady -= OnClientsGotReady;
         }
 
         public bool TryGetDeal(out IDeal deal)
@@ -64,7 +66,7 @@ namespace Clients.Adapter
 
         private bool TryFindClient()
         {
-            if (_allClients.TryGetRandom(out _client) == false)
+            if (_clientsSequence.TryGetNext(out _client) == false)
             {
                 Debug.LogError("Cannot find new client");
                 return false;
@@ -100,6 +102,11 @@ namespace Clients.Adapter
             _deal.Accepted -= OnDealAccepted;
             _deal.Rejected -= OnDealRejected;
             return true;
+        }
+
+        private void OnClientsGotReady()
+        {
+            UpdateClient();
         }
     }
 }

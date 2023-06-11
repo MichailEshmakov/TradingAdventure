@@ -22,9 +22,9 @@ namespace Days.ViewModel
             }
             set
             {
-                _model.ClientsAmount = Mathf.RoundToInt(ComputeSettingValue(value, 
-                    _config.MinClientsAmount,
-                    _config.MaxClientsAmount));
+                _model.ClientsAmount = Mathf.RoundToInt(ComputeSettingValue(value,
+                    _config.MaxClientsAmount,
+                    _config.MinClientsAmount));
             }
         }
 
@@ -37,8 +37,8 @@ namespace Days.ViewModel
             set
             {
                 _model.DealsCostCoefficient = ComputeSettingValue(value,
-                    _config.MinDealsCostCoefficient,
-                    _config.MaxDealsCostCoefficient);
+                    _config.MaxDealsCostCoefficient,
+                    _config.MinDealsCostCoefficient);
             }
         }
 
@@ -51,8 +51,8 @@ namespace Days.ViewModel
             set
             {
                 _model.ClientsTypesAmount = Mathf.RoundToInt(ComputeSettingValue(value,
-                    _config.MinClientsTypesAmount,
-                    _config.MaxClientsTypesAmount));
+                    _config.MaxClientsTypesAmount,
+                    _config.MinClientsTypesAmount));
             }
         }
 
