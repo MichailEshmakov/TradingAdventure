@@ -1,3 +1,4 @@
+using Clients.Adapter.DealCostChanging;
 using Zenject;
 
 namespace Clients.Adapter.Installers
@@ -18,7 +19,8 @@ namespace Clients.Adapter.Installers
 
         public override void InstallBindings()
         {
-            Container.Bind<IDealCreator>().To<DealCreator>().AsSingle();
+            Container.Bind<IDealCreator>().To<CostChangableDealCreator>().AsSingle();
+            Container.Bind<IDealCostCoefficient>().To<DailyDealCostCoefficient>().AsSingle();
             Container.Bind(typeof(IDealPublisher), typeof(IClientChangingPubliser)).To<TradingPipeline>().AsSingle();
             Container.Bind<IClientsSequence>().To<ClientsSequence>().AsSingle();
             Container.BindInterfacesTo<ClientsAdapterInstaller>().FromInstance(this).AsSingle();

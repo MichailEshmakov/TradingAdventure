@@ -31,7 +31,7 @@ namespace Tests.UnitTests.Clients
                 new List<ClientPreference> { demand, supply });
 
             // Act.
-            Deal deal = dealCreator.CreateDeal(client);
+            IDeal deal = dealCreator.CreateDeal(client);
             Currency dealRemovableResourceCurrency = deal.Removable.Currency;
 
             // Assert.
@@ -59,7 +59,7 @@ namespace Tests.UnitTests.Clients
                 new List<ClientPreference> { demand, supply });
 
             // Act.
-            Deal deal = dealCreator.CreateDeal(client);
+            IDeal deal = dealCreator.CreateDeal(client);
             Currency dealAddableResourceCurrency = deal.Addable.Currency;
 
             // Assert.
@@ -89,7 +89,7 @@ namespace Tests.UnitTests.Clients
                 10);
 
             // Act.
-            Deal deal = dealCreator.CreateDeal(client);
+            IDeal deal = dealCreator.CreateDeal(client);
             Currency dealAddableResourceCurrency = deal.Addable.Currency;
 
             // Assert.
@@ -119,7 +119,7 @@ namespace Tests.UnitTests.Clients
                 10);
 
             // Act.
-            Deal deal = dealCreator.CreateDeal(client);
+            IDeal deal = dealCreator.CreateDeal(client);
             Currency dealAddableResourceCurrency = deal.Addable.Currency;
 
             // Assert.

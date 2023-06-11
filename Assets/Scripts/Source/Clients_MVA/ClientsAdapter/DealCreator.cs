@@ -28,7 +28,7 @@ namespace Clients.Adapter
             _playerInventory = playerInventory;
         }
 
-        public Deal CreateDeal(IClient client)
+        public IDeal CreateDeal(IClient client)
         {
             List<ClientPreference> cosideringPreferences = client.ResourceCoefficients.ToList();
             IResource demand = CreateDemand(cosideringPreferences, client.DealCost, out ClientPreference demandPreferences);

@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startPlayersResources:
   - _currency: 0
-    _value: 10
+    _value: 25
   - _currency: 1
-    _value: 10
+    _value: 25
   - _currency: 2
-    _value: 10
+    _value: 25
   - _currency: 3
-    _value: 10
+    _value: 25

@@ -5,6 +5,6 @@ namespace Clients.Adapter
 {
     public interface IDealCreator
     {
-        public Deal CreateDeal(IClient client);
+        public IDeal CreateDeal(IClient client);
     }
 }

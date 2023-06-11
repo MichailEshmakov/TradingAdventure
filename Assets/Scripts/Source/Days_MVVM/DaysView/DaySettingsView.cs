@@ -23,9 +23,9 @@ namespace Days.View
         private void OnEnable()
         {
             _viewModel.PropertyChanged += OnPropertyChanged;
-            _advertisement.value = 1 - _viewModel.ClientsAmountPart;
-            _goodsAmount.value = 1 - _viewModel.DealsCostCoefficientPart;
-            _townScale.value = 1 - _viewModel.ClientsTypesAmountPart;
+            _advertisement.value = _viewModel.ClientsAmountPart;
+            _goodsAmount.value = _viewModel.DealsCostCoefficientPart;
+            _townScale.value = _viewModel.ClientsTypesAmountPart;
 
             _advertisement.onValueChanged.AddListener(OnAdvertismentValueChanged);
             _goodsAmount.onValueChanged.AddListener(OnGoodsAmountValueChanged);
@@ -68,8 +68,6 @@ namespace Days.View
 
         private void OnAdvertismentValueChanged(float newValue)
         {
-            Debug.Log(newValue);
-            Debug.Log(_advertisement.value);
             _viewModel.ClientsAmountPart = newValue;
         }
 
