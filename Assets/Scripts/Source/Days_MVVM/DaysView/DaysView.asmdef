@@ -2,7 +2,9 @@
     "name": "DaysView",
     "rootNamespace": "",
     "references": [
-        "GUID:20561a7c3144ad64c989a166d7acb5bd"
+        "GUID:20561a7c3144ad64c989a166d7acb5bd",
+        "GUID:1eb63cac0dd2b144e90d7ef61a6c8faf",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

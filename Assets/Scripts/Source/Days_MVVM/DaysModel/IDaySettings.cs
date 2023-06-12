@@ -1,5 +1,4 @@
 ﻿using Days.Model.Configs;
-using System.ComponentModel;
 
 namespace Days.Model
 {

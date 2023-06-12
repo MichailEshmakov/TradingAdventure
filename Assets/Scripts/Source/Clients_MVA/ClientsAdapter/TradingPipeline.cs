@@ -1,7 +1,6 @@
 using Clients.Model.Configs;
 using Deals.Model;
 using System;
-using UnityEngine;
 using Zenject;
 
 namespace Clients.Adapter
@@ -66,13 +65,7 @@ namespace Clients.Adapter
 
         private bool TryFindClient()
         {
-            if (_clientsSequence.TryGetNext(out _client) == false)
-            {
-                Debug.LogError("Cannot find new client");
-                return false;
-            }
-
-            return true;
+            return _clientsSequence.TryGetNext(out _client);
         }
 
         private void UpdateClient()

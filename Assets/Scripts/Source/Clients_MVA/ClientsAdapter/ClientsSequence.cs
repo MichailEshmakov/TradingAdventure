@@ -8,7 +8,7 @@ using Zenject;
 
 namespace Clients.Adapter
 {
-    public class ClientsSequence : IClientsSequence, IDisposable
+    public class ClientsSequence : IMainClientsSequence, IDisposable
     {
         private IAllClients _allClients;
         private IReadonlyDaySettings _daySettings;

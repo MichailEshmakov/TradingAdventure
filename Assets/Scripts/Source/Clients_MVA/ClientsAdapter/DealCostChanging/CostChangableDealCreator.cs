@@ -26,7 +26,6 @@ namespace Clients.Adapter.DealCostChanging
         {
             IDeal deal = _dealCreator.CreateDeal(client);
             IResource addable = new Resource(Mathf.CeilToInt(deal.Addable.Value * _dealCostCoefficient.Value), deal.Addable.Currency);
-            Debug.Log(_dealCostCoefficient.Value);
             IResource removable = new Resource(Mathf.CeilToInt(deal.Removable.Value * _dealCostCoefficient.Value), deal.Removable.Currency);
             return new Deal(removable, addable, _playerInventory);
         }

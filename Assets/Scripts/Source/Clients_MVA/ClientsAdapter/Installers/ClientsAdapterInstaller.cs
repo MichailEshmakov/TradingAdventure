@@ -1,3 +1,4 @@
+using Clients.Adapter.DailyCounting;
 using Clients.Adapter.DealCostChanging;
 using Zenject;
 
@@ -7,6 +8,7 @@ namespace Clients.Adapter.Installers
     {
         private TradingPipeline _tradingPipeline;
         private ClientsSequence _clientsSequence;
+        private DailyLimitedClientsSequence _dailyLimitedClientsSequence;
 
         private void OnDisable()
         {
@@ -15,6 +17,9 @@ namespace Clients.Adapter.Installers
 
             if (_clientsSequence != null)
                 _clientsSequence.Dispose();
+
+            if (_dailyLimitedClientsSequence != null)
+                _dailyLimitedClientsSequence.Dispose();
         }
 
         public override void InstallBindings()
@@ -22,14 +27,16 @@ namespace Clients.Adapter.Installers
             Container.Bind<IDealCreator>().To<CostChangableDealCreator>().AsSingle();
             Container.Bind<IDealCostCoefficient>().To<DailyDealCostCoefficient>().AsSingle();
             Container.Bind(typeof(IDealPublisher), typeof(IClientChangingPubliser)).To<TradingPipeline>().AsSingle();
-            Container.Bind<IClientsSequence>().To<ClientsSequence>().AsSingle();
+            Container.Bind<IMainClientsSequence>().To<ClientsSequence>().AsSingle();
+            Container.Bind<IClientsSequence>().To<DailyLimitedClientsSequence>().AsSingle();
             Container.BindInterfacesTo<ClientsAdapterInstaller>().FromInstance(this).AsSingle();
         }
 
         public void Initialize()
         {
             _tradingPipeline = (TradingPipeline)Container.Resolve<IDealPublisher>();
-            _clientsSequence = (ClientsSequence)Container.Resolve<IClientsSequence>();
+            _clientsSequence = (ClientsSequence)Container.Resolve<IMainClientsSequence>();
+            _dailyLimitedClientsSequence = (DailyLimitedClientsSequence)Container.Resolve<IClientsSequence>();
         }
     }
 }
