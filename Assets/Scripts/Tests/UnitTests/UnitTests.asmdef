@@ -10,7 +10,8 @@
         "DealsModel",
         "ClientsModel",
         "ClientsAdapter",
-        "DaysModel"
+        "DaysModel",
+        "UpgradesModel"
     ],
     "includePlatforms": [
         "Editor"

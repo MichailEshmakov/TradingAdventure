@@ -1,12 +1,8 @@
 {
-    "name": "Mock",
+    "name": "UpgratesView",
     "rootNamespace": "",
     "references": [
-        "GUID:27d5d954b183b3b499899fb735a38407",
-        "GUID:fdda90916570d3e44b4a14bc7ecc4311",
-        "GUID:038ec4e5b0fcb8f47a818bb858c75fc7",
-        "GUID:8bc3cfe656a44ca4889a2c48ac198f09",
-        "GUID:8422e54c21f032548917eedf4229962d"
+        "GUID:b6d6d59f07ce7374eac65fb6ed00f774"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
