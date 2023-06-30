@@ -2,7 +2,10 @@
     "name": "UpgradesPresenter",
     "rootNamespace": "",
     "references": [
-        "GUID:8bc3cfe656a44ca4889a2c48ac198f09"
+        "GUID:8bc3cfe656a44ca4889a2c48ac198f09",
+        "GUID:038ec4e5b0fcb8f47a818bb858c75fc7",
+        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4",
+        "GUID:8422e54c21f032548917eedf4229962d"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

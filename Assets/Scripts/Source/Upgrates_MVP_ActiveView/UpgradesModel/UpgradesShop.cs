@@ -1,20 +1,32 @@
-using Days.Model.Configs;
 using Goods.Model;
+using Goods.Model.Readonly.Resources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Upgrades.Model.Configs;
+using Zenject;
 
 namespace Upgrades.Model
 {
     public class UpgradesShop : IUpgradesShop
     {
-        private readonly IDictionary<string, BuyableUpgrate> _areUpgratesBought;
-        private readonly IStorage _storage;
+        private IDictionary<string, BuyableUpgrate> _areUpgratesBought;
+        private IStorage _storage;
 
-        public event Action<IDaySettingsConfig> UpgradeBought;
+        public event Action<IUpgradeConfig> UpgradeBought;
 
         public UpgradesShop(IEnumerable<IUpgradeConfig> upgrades, IStorage storage)
+        {
+            Construct(upgrades, storage);
+        }
+
+        [Inject]
+        private void Construct(IAllUpgrades upgrades, IStorage storage)
+        {
+            Construct(upgrades.UpgradeConfigs, storage);
+        }
+
+        private void Construct(IEnumerable<IUpgradeConfig> upgrades, IStorage storage)
         {
             _areUpgratesBought = upgrades.ToDictionary(upgrade => upgrade.Name,
                 upgrade => new BuyableUpgrate() { Config = upgrade, IsBought = false });
@@ -52,6 +64,16 @@ namespace Upgrades.Model
             }
 
             return isBought;
+        }
+
+        public bool TryGetPrice(string name, out IEnumerable<IReadonlyResource> price)
+        {
+            price = null;
+            if (_areUpgratesBought.ContainsKey(name) == false)
+                return false;
+
+            price = _areUpgratesBought[name].Config.Price;
+            return true;
         }
 
         private struct BuyableUpgrate

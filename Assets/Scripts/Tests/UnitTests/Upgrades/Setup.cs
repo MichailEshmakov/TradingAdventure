@@ -16,7 +16,9 @@ namespace Tests.UnitTests.Upgrades
 
         public static UpgradedDaySettingsConfig UpgradedDaySettingsConfig(IDaySettingsConfig daySettingsConfig, IUpgradesShop shop)
         {
-            return new UpgradedDaySettingsConfig(daySettingsConfig, shop);
+            UpgradedDaySettingsConfig upgradedDaySettingsConfig = new UpgradedDaySettingsConfig();
+            upgradedDaySettingsConfig.Construct(daySettingsConfig, shop);
+            return upgradedDaySettingsConfig;
         }
     }
 }

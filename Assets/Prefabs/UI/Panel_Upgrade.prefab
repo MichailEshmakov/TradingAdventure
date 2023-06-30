@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7561919492958048317}
   - component: {fileID: 2866664564795128487}
   m_Layer: 5
-  m_Name: Panel_UpgrateInner
+  m_Name: Panel_UpgradeInner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 2319804166939339246}
   - component: {fileID: 7204392728210637686}
   m_Layer: 5
-  m_Name: Image_UpgrateIcon
+  m_Name: Image_UpgradeIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -178,8 +178,9 @@ GameObject:
   - component: {fileID: 8721065475333180570}
   - component: {fileID: 237172794847050402}
   - component: {fileID: 8352026078513392560}
+  - component: {fileID: 7395465347322200412}
   m_Layer: 5
-  m_Name: Panel_Upgrate
+  m_Name: Panel_Upgrade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -227,7 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.631675, g: 0.8018868, b: 0.6760542, a: 1}
+  m_Color: {r: 0.6313726, g: 0.8, b: 0.6745098, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -244,3 +245,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7395465347322200412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8919735294099740351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b559725a37b64a547bb2224c59912ccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 7204392728210637686}
+  _borders: {fileID: 8352026078513392560}
+  _boughtIconColor: {r: 1, g: 1, b: 1, a: 1}
+  _notBoughtIconColor: {r: 0.48235294, g: 0.48235294, b: 0.48235294, a: 0.27058825}
+  _availableBordersColor: {r: 0.8980392, g: 0.8666667, b: 0.6901961, a: 1}
+  _notAvailableBordersColor: {r: 1, g: 0.43137255, b: 0.23137255, a: 1}
+  _boughtBordersColor: {r: 0.6313726, g: 0.8, b: 0.6745098, a: 1}

@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 254a170adf0101e4ba2045e9c3fe18aa, type: 3}
   m_Name: InventoryConfig
   m_EditorClassIdentifier: 
-  _startPlayersResources:
-  - _currency: 0
-    _value: 25
-  - _currency: 1
-    _value: 25
-  - _currency: 2
-    _value: 25
-  - _currency: 3
-    _value: 25
+  _resources:
+    _resources:
+    - _currency: 0
+      _value: 10
+    - _currency: 1
+      _value: 10
+    - _currency: 2
+      _value: 10
+    - _currency: 3
+      _value: 10

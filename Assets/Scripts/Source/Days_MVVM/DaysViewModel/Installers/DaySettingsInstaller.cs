@@ -5,24 +5,25 @@ using Zenject;
 
 namespace Days.ViewModel.Installers
 {
-    public class DaySettingsInstaller : MonoInstaller
+    public class DaySettingsInstaller : MonoInstaller, IInitializable
     {
-        [SerializeField] private DaySettingsConfig _config;
-        [SerializeField] private StartDaySettings _startDaySettings;
-
         private DaySettingsViewModel _viewModel;
-
-        public override void InstallBindings()
-        {
-            DaySettings model = new DaySettings(_config, _startDaySettings.Values);
-            _viewModel = new DaySettingsViewModel(_config, model);
-            Container.Bind<IDaySettingsViewModel>().FromInstance(_viewModel);
-            Container.Bind<IReadonlyDaySettings>().FromInstance(model);
-        }
 
         private void OnDestroy()
         {
-            _viewModel.Dispose();
+            if (_viewModel != null)
+                _viewModel.Dispose();
+        }
+
+        public override void InstallBindings()
+        {
+            Container.Bind(typeof(IDaySettings), typeof(IReadonlyDaySettings)).To<DaySettings>().AsSingle();
+            Container.Bind<IDaySettingsViewModel>().To<DaySettingsViewModel>().AsSingle();
+        }
+
+        public void Initialize()
+        {
+            _viewModel = (DaySettingsViewModel)Container.Resolve<IDaySettingsViewModel>();
         }
     }
 }

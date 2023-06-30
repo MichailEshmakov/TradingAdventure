@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Days.Model.Configs
 {
     [CreateAssetMenu(fileName = nameof(StartDaySettings), menuName = "Configs/Model/" + nameof(StartDaySettings), order = 0)]
-    public class StartDaySettings : ScriptableObject
+    public class StartDaySettings : ScriptableObject, IStartDaySettings
     {
         [SerializeField] private bool _isAutomaticValidate = false;
         [SerializeField] private DaySettingsConfig _config;

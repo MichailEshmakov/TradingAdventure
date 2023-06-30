@@ -1,12 +1,13 @@
 using Days.Model.Configs;
 using System.ComponentModel;
+using Zenject;
 
 namespace Days.Model
 {
     public class DaySettings : IDaySettings
     {
-        private readonly IDaySettingsBalancer _balancer;
-        private readonly IDaySettingsConfig _config;
+        private IDaySettingsBalancer _balancer;
+        private IDaySettingsConfig _config;
         private int _clientsAmount;
         private float _dealsCostCoefficient;
         private int _clientsTypesAmount;
@@ -57,11 +58,12 @@ namespace Days.Model
 
         public IDaySettingsConfig Config => _config;
 
-        public DaySettings(IDaySettingsConfig config, IDaySettingsValues startValues)
+        [Inject]
+        private void Construct(IDaySettingsConfig config, IStartDaySettings startValues)
         {
             _config = config;
             _balancer = new DaySettingsBalancer(config);
-            SetSettings(_balancer.Balance(startValues, DaySettingType.Nothing));
+            SetSettings(_balancer.Balance(startValues.Values, DaySettingType.Nothing));
         }
 
         private void SetSettings(IDaySettingsValues values)

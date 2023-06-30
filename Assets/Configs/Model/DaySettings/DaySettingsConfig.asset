@@ -16,7 +16,7 @@ MonoBehaviour:
   _minClientsAmount: 10
   _maxDealsCostCoefficient: 5
   _minDealsCostCoefficient: 1
-  _maxClientsTypesAmount: 7
+  _maxClientsTypesAmount: 6
   _minClientsTypesAmount: 3
   _allSettingsCost: 100
   _oneClientCost: 1

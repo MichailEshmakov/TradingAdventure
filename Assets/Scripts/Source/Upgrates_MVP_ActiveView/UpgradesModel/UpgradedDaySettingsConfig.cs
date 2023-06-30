@@ -1,11 +1,12 @@
 using Days.Model.Configs;
 using System;
+using Zenject;
 
 namespace Upgrades.Model
 {
     public class UpgradedDaySettingsConfig : IDaySettingsConfig, IDisposable
     {
-        private readonly IUpgradesShop _shop;
+        private IUpgradesShop _shop;
         private int _maxClientsAmount;
         private int _minClientsAmount;
         private float _maxDealsCostCoefficient;
@@ -37,7 +38,18 @@ namespace Upgrades.Model
 
         public float ClientTypeCost => _clientTypeCost;
 
-        public UpgradedDaySettingsConfig(IDaySettingsConfig config, IUpgradesShop shop)
+        [Inject]
+        private void Construct(IPrimalDaySettingsConfig config, IUpgradesShop shop)
+        {
+            Construct((IDaySettingsConfig)config, shop);
+        }
+
+#if UNITY_EDITOR
+        public
+#else
+        pivate
+#endif
+            void Construct(IDaySettingsConfig config, IUpgradesShop shop)
         {
             _maxClientsAmount = config.MaxClientsAmount;
             _minClientsAmount = config.MinClientsAmount;
@@ -59,18 +71,18 @@ namespace Upgrades.Model
             _shop.UpgradeBought -= OnUpgradeBought;
         }
 
-        private void OnUpgradeBought(IDaySettingsConfig update)
+        private void OnUpgradeBought(IDaySettingsConfig upgrade)
         {
-            _maxClientsAmount += update.MaxClientsAmount;
-            _minClientsAmount += update.MinClientsAmount;
-            _maxDealsCostCoefficient += update.MaxDealsCostCoefficient;
-            _minDealsCostCoefficient += update.MinDealsCostCoefficient;
-            _maxClientsTypesAmount += update.MaxClientsTypesAmount;
-            _minClientsTypesAmount += update.MinClientsTypesAmount;
-            _allSettingsCost += update.AllSettingsCost;
-            _oneClientCost += update.OneClientCost;
-            _dealCostCoefficientCost += update.DealCostCoefficientCost;
-            _clientTypeCost += update.ClientTypeCost;
+            _maxClientsAmount += upgrade.MaxClientsAmount;
+            _minClientsAmount += upgrade.MinClientsAmount;
+            _maxDealsCostCoefficient += upgrade.MaxDealsCostCoefficient;
+            _minDealsCostCoefficient += upgrade.MinDealsCostCoefficient;
+            _maxClientsTypesAmount += upgrade.MaxClientsTypesAmount;
+            _minClientsTypesAmount += upgrade.MinClientsTypesAmount;
+            _allSettingsCost += upgrade.AllSettingsCost;
+            _oneClientCost += upgrade.OneClientCost;
+            _dealCostCoefficientCost += upgrade.DealCostCoefficientCost;
+            _clientTypeCost += upgrade.ClientTypeCost;
         }
     }
 }

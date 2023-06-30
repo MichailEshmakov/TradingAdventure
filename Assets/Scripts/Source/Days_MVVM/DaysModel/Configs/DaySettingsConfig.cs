@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Days.Model.Configs
 {
     [CreateAssetMenu(fileName = nameof(DaySettingsConfig), menuName = "Configs/Model/" + nameof(DaySettingsConfig), order = 0)]
-    public class DaySettingsConfig : ScriptableObject, IDaySettingsConfig
+    public class DaySettingsConfig : ScriptableObject, IPrimalDaySettingsConfig
     {
         [Header("Min and Max Values")]
         [SerializeField] [Min(1)] private int _maxClientsAmount; 
