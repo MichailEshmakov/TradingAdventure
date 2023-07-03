@@ -1,9 +1,11 @@
+using Days.Model.Configs;
 using Goods.Model;
 using Goods.Model.Readonly.Resources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Upgrades.Model.Configs;
+using Upgrades.Model.Saving;
 using Zenject;
 
 namespace Upgrades.Model
@@ -21,15 +23,20 @@ namespace Upgrades.Model
         }
 
         [Inject]
-        private void Construct(IAllUpgrades upgrades, IStorage storage)
+        private void Construct(IAllUpgrades upgrades, IStorage storage, IStartBoughtFlags startBoughtFlags)
         {
-            Construct(upgrades.UpgradeConfigs, storage);
+            Construct(upgrades.UpgradeConfigs, storage, startBoughtFlags);
         }
 
-        private void Construct(IEnumerable<IUpgradeConfig> upgrades, IStorage storage)
+        private void Construct(IEnumerable<IUpgradeConfig> upgrades, IStorage storage, IStartBoughtFlags startBoughtFlags = null)
         {
             _areUpgratesBought = upgrades.ToDictionary(upgrade => upgrade.Name,
-                upgrade => new BuyableUpgrate() { Config = upgrade, IsBought = false });
+                upgrade => new BuyableUpgrate() 
+                { 
+                    Config = upgrade, 
+                    IsBought = startBoughtFlags != null && 
+                        startBoughtFlags[upgrade.Name] 
+                });
             _storage = storage;
         }
 
@@ -74,6 +81,13 @@ namespace Upgrades.Model
 
             price = _areUpgratesBought[name].Config.Price;
             return true;
+        }
+
+        public IEnumerable<IDaySettingsConfig> GetBoughtUpgrates()
+        {
+            return _areUpgratesBought.Values
+                .Where(upgrade => upgrade.IsBought)
+                .Select(upgrade => upgrade.Config);
         }
 
         private struct BuyableUpgrate

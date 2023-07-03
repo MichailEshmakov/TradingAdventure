@@ -14,5 +14,6 @@ namespace Upgrades.Model
         public bool IsBought(string upgrateName);
         public bool CanBuy(string upgrateName);
         public bool TryGetPrice(string name, out IEnumerable<IReadonlyResource> price);
+        public IEnumerable<IDaySettingsConfig> GetBoughtUpgrates();
     }
 }

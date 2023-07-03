@@ -1,5 +1,6 @@
 using Days.Model.Configs;
 using System;
+using System.Collections.Generic;
 using Zenject;
 
 namespace Upgrades.Model
@@ -64,6 +65,12 @@ namespace Upgrades.Model
 
             _shop = shop;
             _shop.UpgradeBought += OnUpgradeBought;
+
+            IEnumerable<IDaySettingsConfig> boughtUpgrades = shop.GetBoughtUpgrates();
+            foreach (IDaySettingsConfig upgrade in boughtUpgrades)
+            {
+                ApplyUpgrade(upgrade);
+            }
         }
 
         public void Dispose()
@@ -72,6 +79,11 @@ namespace Upgrades.Model
         }
 
         private void OnUpgradeBought(IDaySettingsConfig upgrade)
+        {
+            ApplyUpgrade(upgrade);
+        }
+
+        private void ApplyUpgrade(IDaySettingsConfig upgrade)
         {
             _maxClientsAmount += upgrade.MaxClientsAmount;
             _minClientsAmount += upgrade.MinClientsAmount;

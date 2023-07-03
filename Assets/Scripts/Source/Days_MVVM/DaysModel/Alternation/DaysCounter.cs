@@ -1,3 +1,4 @@
+using Days.Model.Alternation.Saving;
 using System;
 using System.ComponentModel;
 using Zenject;
@@ -14,8 +15,9 @@ namespace Days.Model.Alternation
         public int Day => _day;
 
         [Inject]
-        private void Construct(IDayStartingPublisher startingPublisher)
+        private void Construct(IDayStartingPublisher startingPublisher, IStartCurrentDay currentDay)
         {
+            _day = currentDay.LoadValue();
             _startingPublisher = startingPublisher;
             _startingPublisher.NextDayStarted += OnNextDayStarted;
         }
