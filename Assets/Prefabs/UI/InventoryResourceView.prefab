@@ -69,7 +69,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1121420981, guid: 970a36c06de61794098fb1252d669922, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -127,10 +127,10 @@ RectTransform:
   m_Father: {fileID: 6259570309093578151}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 43.0091, y: -113.7397}
-  m_SizeDelta: {x: 166.4819, y: 89.3356}
+  m_AnchorMin: {x: 0.25247294, y: 0.09453166}
+  m_AnchorMax: {x: 0.90164256, y: 0.27967307}
+  m_AnchoredPosition: {x: 5.8, y: 3.4904}
+  m_SizeDelta: {x: -6.2024, y: 6.981}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6259570310209103169
 CanvasRenderer:
@@ -187,15 +187,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 58.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 4
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -339,10 +339,10 @@ RectTransform:
   m_Father: {fileID: 6259570309093578151}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8, y: 39}
-  m_SizeDelta: {x: 110, y: 110}
+  m_AnchorMin: {x: 0.38415536, y: 0.44900003}
+  m_AnchorMax: {x: 0.582, y: 0.8093142}
+  m_AnchoredPosition: {x: -0.33694267, y: -6.2801676}
+  m_SizeDelta: {x: 52.893253, y: -10.011745}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6259570310891169048
 CanvasRenderer:
@@ -372,8 +372,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: -20334642, guid: 970a36c06de61794098fb1252d669922, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
