@@ -48,7 +48,7 @@ namespace Upgrades.Model
 #if UNITY_EDITOR
         public
 #else
-        pivate
+        private
 #endif
             void Construct(IDaySettingsConfig config, IUpgradesShop shop)
         {
