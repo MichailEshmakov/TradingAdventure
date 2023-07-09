@@ -10,7 +10,7 @@
 Кроме того, на выручку с обменов товарами игрок может покупать различные улучшения, которые могут влиять на те же характеристики
 
 ## Поиграть
-[Ссылка на apk](https://drive.google.com/file/d/1fgcBvQ4RAjSvrduYUEeBH-dcXkhOlcsd/view?usp=drive_link)
+[Ссылка на apk](https://drive.google.com/drive/folders/1VtBP7pmbpHEu-xOPF3mrQB-CAzT0e5OP?usp=drive_link)
 
 ## Особенность
 Код игры разбит на пять частей. Каждая часть реализована своим MV-паттерном
